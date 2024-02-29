@@ -1,0 +1,100 @@
+<head><link rel="stylesheet" href="notification.component.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    
+ </head>
+  <div class="breadcrumb-pok">
+    <img class="br-shape-left" src="assets/img/breadcrumb/left-bg.png" alt="">
+    <img class="br-shape-right" src="assets/img/breadcrumb/right-bg.png" alt="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-6">
+                <div class="breadcrumb-content">
+                    <span class="subtitle">WELCOME</span>
+                    <h2 class="title">Liste Des Notifications</h2>
+                    <div class="page-links">
+                        <ul>
+                            <li>
+                                <a href='index.html'>Home</a>
+                            </li>
+                            <li>
+                                <a routerLink="/projets">Projets</a>
+                            </li>
+                            <li>
+                                <span class="current-page">Notifications</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+
+ <div class="contact-us">
+    <div class="notifications-list">
+    
+ 
+   
+        <div class="project-boxes jsGridView">
+            <div class="project-box-wrapper" *ngFor="let notification of notifications">
+                <div class="project-box" style="background-color: #fee4cb;">
+                    <div class="project-box-header">
+                        <span>{{ notification.dateEnvoi | date:'yyyy-MM-dd' }}</span>
+                        <div class="more-wrapper">
+                            <i class="bi bi-trash" (click)="confirmDelete(notification.idNotification)"></i>
+                        </div>
+                    </div>
+                    <div class="project-box-content-header">
+                        <p class="box-content-header">Your Notification:</p>
+                        <p class="box-content-subheader">{{ notification.contenu }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+          
+
+<div class="col-xl-4 col-lg-4 col-md-9 col-sm-9 d-xl-flex d-lg-flex d-block align-items-end">
+    <div class="part-img">
+        <img src="Front/assets/img/contact/contact-img.png" alt="">
+    </div>
+</div>
+</div>
+<div class="part-address">
+<div class="container">
+<div class="address-elements">
+    <div class="single-element">
+        <h4 class="title">Phone</h4>
+        <ul>
+            <li>+96  847-930-0570</li>
+            <li>+96  603-221-6491</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">email</h4>
+        <ul>
+            <li>JameMorgan@armyspy.com</li>
+            <li>WalterBBarry@rhyta.com</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">Head office</h4>
+        <ul>
+            <li>1051 Agriculture Lane</li>
+            <li>Miami, Florida(FL),  33179</li>
+            <li>305-249-1601</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">branch  1</h4>
+        <ul>
+            <li>3880 Eagle Drive</li>
+            <li>Detroit, Michigan(MI),  48219</li>
+            <li>734-771-2836</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>

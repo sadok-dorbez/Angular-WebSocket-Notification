@@ -1,0 +1,126 @@
+<head><link rel="stylesheet" href="projet.component.css">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+ </head>
+
+
+
+
+
+  <div class="breadcrumb-pok">
+    <img class="br-shape-left" src="assets/img/breadcrumb/left-bg.png" alt="">
+    <img class="br-shape-right" src="assets/img/breadcrumb/right-bg.png" alt="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-6">
+                <div class="breadcrumb-content">
+
+                    <h2 class="title">Liste Des Projets</h2>
+                    <div class="page-links">
+                        <ul>
+                            <li>
+                                <a href='index.html'>Home</a>
+                            </li>
+                            <li>
+                                <span class="current-page">Projets</span>
+                            </li>
+                            <li>
+                                <a routerLink="/notifications">Notifications</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+ <div class="contact-us">
+    <div class="projects-list">
+    <div class="button-container">
+
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <a href="/projet" class="btn btn-primary">Creer un projet</a>
+                </div>
+            </div>
+        </div>
+
+    </div><br><br><br>
+    <section class="projects no-padding-top">
+        <div class="container">
+          <!-- Project-->
+          <div class="project" *ngFor="let project of projects">
+            <div class="row bg-white has-shadow">
+              <div class="left-col col-lg-6 d-flex align-items-center justify-content-between">
+                <div class="project-title d-flex align-items-center">
+                  <div class="text">
+                    <h3 class="h4">{{ project.nom }}</h3><small>{{ project.description }}</small>
+                  </div>
+                </div>
+                <div class="project-date"><span class="hidden-sm-down">{{ project.dateDebut | date:'yyyy-MM-dd'}}</span></div>
+              </div>
+              <div class="right-col col-lg-6 d-flex align-items-center">
+                <div class="time"><i class="fa fa-clock-o"></i>{{ project.dateFin | date:'yyyy-MM-dd' }}</div>
+                <div class="project-progress">
+                  <div class="progress">
+                    <div role="progressbar" [style.width.%]="project.progress" [style.backgroundColor]="project.progressColor" class="progress-bar bg-green"></div>
+                  </div>
+                </div>
+
+                 <div class="project-actions">
+                  <i class="bi bi-pencil-square" (click)="updateProjet(project.idProjet)"></i>
+                  <i class="bi bi-trash" (click)="confirmDelete(project.idProjet)"></i>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+
+
+<div class="col-xl-4 col-lg-4 col-md-9 col-sm-9 d-xl-flex d-lg-flex d-block align-items-end">
+    <div class="part-img">
+        <img src="Front/assets/img/contact/contact-img.png" alt="">
+    </div>
+</div>
+</div>
+<div class="part-address">
+<div class="container">
+<div class="address-elements">
+    <div class="single-element">
+        <h4 class="title">Phone</h4>
+        <ul>
+            <li>+96  847-930-0570</li>
+            <li>+96  603-221-6491</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">email</h4>
+        <ul>
+            <li>JameMorgan@armyspy.com</li>
+            <li>WalterBBarry@rhyta.com</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">Head office</h4>
+        <ul>
+            <li>1051 Agriculture Lane</li>
+            <li>Miami, Florida(FL),  33179</li>
+            <li>305-249-1601</li>
+        </ul>
+    </div>
+    <div class="single-element">
+        <h4 class="title">branch  1</h4>
+        <ul>
+            <li>3880 Eagle Drive</li>
+            <li>Detroit, Michigan(MI),  48219</li>
+            <li>734-771-2836</li>
+        </ul>
+    </div>
+</div>
+</div>
+</div>
+</div>

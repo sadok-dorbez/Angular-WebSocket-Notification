@@ -1,0 +1,119 @@
+<div class="breadcrumb-pok">
+    <img class="br-shape-left" src="assets/img/breadcrumb/left-bg.png" alt="">
+    <img class="br-shape-right" src="assets/img/breadcrumb/right-bg.png" alt="">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-6">
+                <div class="breadcrumb-content">
+                    <span class="subtitle">WELCOME</span>
+                    <h2 class="title">Creer Un Projet</h2>
+                    <div class="page-links">
+                        <ul>
+                            <li>
+                                <a href='index.html'>Home</a>
+                            </li>
+                            <li>
+                                <a routerLink="/projets">Projets</a>
+                            </li>
+                            <li>
+                                <a routerLink="/notifications">Notifications</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contact-us">
+    <img src="assets/img/bg-shape/wp-shape-2.png" alt="" class="wp-bg-shape-2">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-8">
+                <div class="part-contact poklotto-form">
+                    <h3 class="title">Projet</h3>
+                    
+                    <div class="part-form">
+                        <div class="part-form">
+                            <form (ngSubmit)="createProjet(projetForm)" #projetForm="ngForm">
+                                <div class="row">
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <label for="dateDebut" class="form-label">Date Debut</label>
+                                        <input type="date" id="dateDebut" name="dateDebut" [(ngModel)]="projet.dateDebut" (ngModelChange)="validateDates(projetForm)" placeholder="Ex:  2023-04-01" required>
+                                        <div *ngIf="projetForm.controls['dateDebut'].errors?.['invalidDate'] && projetForm.controls['dateDebut'].touched" class="error-message">Date Debut must be before Date Fin</div>
+                                        <div *ngIf="projetForm.controls['dateDebut'].errors?.['required'] && projetForm.controls['dateDebut'].touched" class="error-message">Date Debut is required.</div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <label for="dateFin" class="form-label">Date Fin</label>
+                                        <input type="date" id="dateFin" name="dateFin" [(ngModel)]="projet.dateFin" (ngModelChange)="validateDates(projetForm)" placeholder="Ex:  2023-04-30" required>
+                                        <div *ngIf="projetForm.controls['dateFin'].errors?.['invalidDate'] && projetForm.controls['dateFin'].touched" class="error-message">Date Fin must be after Date Debut</div>
+                                        <div *ngIf="projetForm.controls['dateFin'].errors?.['required'] && projetForm.controls['dateFin'].touched" class="error-message">Date Fin is required.</div>
+                                    </div>
+                                    <div class="col-xl-6 col-lg-6 col-md-6">
+                                        <label for="nom" class="form-label">Nom Du Projet</label>
+                                        <input type="text" id="nom" name="nom" [(ngModel)]="projet.nom" placeholder="Ex: Projet X" required>
+                                        <div *ngIf="projetForm.controls['nom'].errors?.['required'] && projetForm.controls['nom'].touched" class="error-message">Nom is required.</div>
+                                    </div>
+                                    <div class="col-xl-12 col-lg-12">
+                                        <label for="description" class="form-label">Votre Description</label>
+                                        <textarea id="description" name="description" [(ngModel)]="projet.description" placeholder="Ex: Description of the project..." required minlength="10"></textarea>
+                                        <div *ngIf="projetForm.controls['description'].errors?.['minlength'] && projetForm.controls['description'].touched" class="error-message">Description must be at least 10 characters long</div>
+                                    </div>
+                                </div>
+                                <button class="btn-pok" type="submit" [disabled]="projetForm.invalid">
+                                    Valider <i class="fa-solid fa-angle-right"></i>
+                                </button>
+                            </form>
+                            
+                            
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-9 col-sm-9 d-xl-flex d-lg-flex d-block align-items-end">
+                <div class="part-img">
+                    <img src="Front/assets/img/contact/contact-img.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="part-address">
+        <div class="container">
+            <div class="address-elements">
+                <div class="single-element">
+                    <h4 class="title">Phone</h4>
+                    <ul>
+                        <li>+96  847-930-0570</li>
+                        <li>+96  603-221-6491</li>
+                    </ul>
+                </div>
+                <div class="single-element">
+                    <h4 class="title">email</h4>
+                    <ul>
+                        <li>JameMorgan@armyspy.com</li>
+                        <li>WalterBBarry@rhyta.com</li>
+                    </ul>
+                </div>
+                <div class="single-element">
+                    <h4 class="title">Head office</h4>
+                    <ul>
+                        <li>1051 Agriculture Lane</li>
+                        <li>Miami, Florida(FL),  33179</li>
+                        <li>305-249-1601</li>
+                    </ul>
+                </div>
+                <div class="single-element">
+                    <h4 class="title">branch  1</h4>
+                    <ul>
+                        <li>3880 Eagle Drive</li>
+                        <li>Detroit, Michigan(MI),  48219</li>
+                        <li>734-771-2836</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
