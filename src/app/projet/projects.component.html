@@ -1,6 +1,8 @@
 <head><link rel="stylesheet" href="projet.component.css">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
  </head>
 
 
@@ -36,7 +38,7 @@
  </div>
  <div class="contact-us">
     <div class="projects-list">
-    <div class="button-container">
+   
 
         <div class="container">
             <div class="row justify-content-center">
@@ -46,8 +48,39 @@
             </div>
         </div>
 
-    </div><br><br><br>
+    </div><br>
+    <div class="button-container">
+        <div class="container">
+            <button class="btn btn-secondary" (click)="resetFilter()">Reset Filter</button>
+        </div>
+    <br><br>
+    
     <section class="projects no-padding-top">
+
+       
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <button class="btn btn-primary" (click)="sortByDateDebut()">Filter by Date Debut</button>
+                    <button class="btn btn-primary" (click)="sortByDateFin()">Filter by Date Fin</button>
+                    <button class="btn btn-primary" (click)="sortByName()">Filter by Nom</button>
+                    
+                </div>
+            </div>
+        </div>  
+        <br>
+        
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-auto">
+                    <input type="date" id="dateDebut" class="form-control" [(ngModel)]="filter.dateDebut" placeholder="Date Debut">
+                    <input type="date" id="dateFin" class="form-control" [(ngModel)]="filter.dateFin" placeholder="Date Fin">
+                    <button class="btn btn-primary" (click)="filterProjects()">Filter by Date</button>
+                </div>
+            </div>
+        </div>
+        
         <div class="container">
           <!-- Project-->
           <div class="project" *ngFor="let project of projects">
