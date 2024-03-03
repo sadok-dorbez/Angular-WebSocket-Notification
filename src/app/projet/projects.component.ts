@@ -98,6 +98,10 @@ export class ProjectsComponent implements OnInit {
     this.fetchProjects();
  }
 
+ viewProjectDetails(id: number): void {
+  this.router.navigate(['/projet/details', id]);
+}
+
 
 
 }

@@ -103,7 +103,8 @@
 
                  <div class="project-actions">
                   <i class="bi bi-pencil-square" (click)="updateProjet(project.idProjet)"></i>
-                   <i class="bi bi-pencil-square" (click)="uplodImage(project.idProjet)"></i>
+                   <i class="bi bi-card-image" (click)="uplodImage(project.idProjet)"></i>
+                   <i class="bi bi-eye" (click)="viewProjectDetails(project.idProjet)"></i>
                    <i class="bi bi-trash" (click)="confirmDelete(project.idProjet)"></i>
 
                 </div>

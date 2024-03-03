@@ -19,6 +19,7 @@ import { ProjectsComponent } from './projet/projects.component';
 import { ProjectUpdateComponent } from './projet/projectUpdate.component';
 import { NotificationComponent } from './notification/notification.component';
 import {ImageUploadComponent} from "./projet/Imageupload.component";
+import { ProjectDetailsComponent } from "./projet/projectDetails.componednt";
 
 
 @NgModule({
@@ -38,6 +39,8 @@ import {ImageUploadComponent} from "./projet/Imageupload.component";
     ProjectUpdateComponent,
     NotificationComponent,
     ImageUploadComponent,
+    ProjectDetailsComponent
+    
   ],
   imports: [
     BrowserModule,

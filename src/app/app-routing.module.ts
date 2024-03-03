@@ -13,6 +13,7 @@ import { ProjectsComponent } from './projet/projects.component';
 import { ProjectUpdateComponent } from './projet/projectUpdate.component';
 import { NotificationComponent } from './notification/notification.component';
 import {ImageUploadComponent} from "./projet/Imageupload.component";
+import { ProjectDetailsComponent } from './projet/projectDetails.componednt';
 
 
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'projet/update/:id', component: ProjectUpdateComponent },
   { path: 'projet/uploadimage/:id', component: ImageUploadComponent },
   {path:'notifications',component:NotificationComponent},
+  { path: 'projet/details/:id', component: ProjectDetailsComponent },
 
 
 ];
