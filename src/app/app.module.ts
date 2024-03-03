@@ -18,6 +18,7 @@ import { ProjetComponent } from './projet/projet.component';
 import { ProjectsComponent } from './projet/projects.component';
 import { ProjectUpdateComponent } from './projet/projectUpdate.component';
 import { NotificationComponent } from './notification/notification.component';
+import {ImageUploadComponent} from "./projet/Imageupload.component";
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { NotificationComponent } from './notification/notification.component';
     ProjetComponent,
     ProjectsComponent,
     ProjectUpdateComponent,
-    NotificationComponent
+    NotificationComponent,
+    ImageUploadComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,7 +45,7 @@ import { NotificationComponent } from './notification/notification.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent]

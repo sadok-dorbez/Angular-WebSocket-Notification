@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpEvent, HttpRequest} from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class ProjetService {
 
-  private apiUrl = 'http://localhost:8085/api/projet';  
+  private apiUrl = 'http://localhost:8085/api/projet';
 
   constructor(private http: HttpClient) { }
 
@@ -28,10 +28,27 @@ export class ProjetService {
     const url = `${this.apiUrl}/${id}`;
     return this.http.delete<any>(url);
   }
-  
+
 
   updateProjet(id : any , projet: any): Observable<any> {
     const url = `${this.apiUrl}/${id}`;
     return this.http.put(url, projet);
+  }
+
+  uploadImage(idProjet: any, file: File): Observable<HttpEvent<any>> {
+    const formData: FormData = new FormData();
+
+    formData.append('file', file);
+
+    const req = new HttpRequest('POST', `${this.apiUrl}/${idProjet}/uploadimage`, formData, {
+      reportProgress: true,
+      responseType: 'json'
+    });
+
+    return this.http.request(req);
+  }
+
+  getProjetImages(idProjet: any): Observable<any> {
+    return this.http.get(`${this.apiUrl}/${idProjet}/images`);
   }
 }

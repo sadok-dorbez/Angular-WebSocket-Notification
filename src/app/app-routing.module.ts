@@ -12,6 +12,7 @@ import { ProjetComponent } from './projet/projet.component';
 import { ProjectsComponent } from './projet/projects.component';
 import { ProjectUpdateComponent } from './projet/projectUpdate.component';
 import { NotificationComponent } from './notification/notification.component';
+import {ImageUploadComponent} from "./projet/Imageupload.component";
 
 
 
@@ -22,11 +23,12 @@ const routes: Routes = [
   {path: 'register', component:RegisterComponent},
   {path:'sign-in-dashboard',component:SignInDashboardComponent},
   {path:'dashboard',component:HomeDashComponent},
-  {path:'projet',component:ProjetComponent},
+  {path:'projet/new',component:ProjetComponent},
   {path:'projets',component:ProjectsComponent},
-  { path: 'projet/:id', component: ProjectUpdateComponent },
+  { path: 'projet/update/:id', component: ProjectUpdateComponent },
+  { path: 'projet/uploadimage/:id', component: ImageUploadComponent },
   {path:'notifications',component:NotificationComponent},
- 
+
 
 ];
 

@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjetService } from './projet.service';
 import { Router } from '@angular/router'
-import { WebsocketService } from './websocket.service';
 
 @Component({
   selector: 'app-projects',
@@ -30,6 +29,7 @@ export class ProjectsComponent implements OnInit {
     this.projetService.getAllProjets().subscribe(
       data => {
         this.projects = data;
+        console.log(this.projects);
       },
       error => {
         console.error(error);
@@ -37,9 +37,11 @@ export class ProjectsComponent implements OnInit {
     );
   }
   updateProjet(id: number): void {
-    this.router.navigate(['/projet/'+ id]);
+    this.router.navigate(['/projet/update/'+ id]);
   }
-
+  uplodImage(id: any) {
+    this.router.navigate(['projet/uploadimage/'+id]);
+  }
   confirmDelete(id: number): void {
     const confirmDelete = window.confirm('Are you sure you want to delete this project?');
 
@@ -81,13 +83,13 @@ export class ProjectsComponent implements OnInit {
        const projectDateFin = this.filter.dateFin ? new Date(project.dateFin) : new Date();
        const filterDateDebut = this.filter.dateDebut ? new Date(this.filter.dateDebut) : new Date();
        const filterDateFin = this.filter.dateFin ? new Date(this.filter.dateFin) : new Date();
- 
+
        return projectDateDebut >= filterDateDebut && projectDateFin <= filterDateFin;
      });
   }
  }
- 
- 
+
+
 
  resetFilter(): void {
     this.filter.dateDebut = null;

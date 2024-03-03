@@ -38,12 +38,12 @@
  </div>
  <div class="contact-us">
     <div class="projects-list">
-   
+
 
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
-                    <a href="/projet" class="btn btn-primary">Creer un projet</a>
+                    <a routerLink="/projet/new" class="btn btn-primary">Creer un projet</a>
                 </div>
             </div>
         </div>
@@ -54,23 +54,23 @@
             <button class="btn btn-secondary" (click)="resetFilter()">Reset Filter</button>
         </div>
     <br><br>
-    
+
     <section class="projects no-padding-top">
 
-       
-        
+
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
                     <button class="btn btn-primary" (click)="sortByDateDebut()">Filter by Date Debut</button>
                     <button class="btn btn-primary" (click)="sortByDateFin()">Filter by Date Fin</button>
                     <button class="btn btn-primary" (click)="sortByName()">Filter by Nom</button>
-                    
+
                 </div>
             </div>
-        </div>  
+        </div>
         <br>
-        
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
@@ -80,7 +80,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container">
           <!-- Project-->
           <div class="project" *ngFor="let project of projects">
@@ -103,7 +103,8 @@
 
                  <div class="project-actions">
                   <i class="bi bi-pencil-square" (click)="updateProjet(project.idProjet)"></i>
-                  <i class="bi bi-trash" (click)="confirmDelete(project.idProjet)"></i>
+                   <i class="bi bi-pencil-square" (click)="uplodImage(project.idProjet)"></i>
+                   <i class="bi bi-trash" (click)="confirmDelete(project.idProjet)"></i>
 
                 </div>
               </div>
