@@ -14,7 +14,7 @@ export class ImageUploadComponent implements OnInit {
   progressInfos: any[] = [];
   message: string[] = [];
   previews: string[] = [];
-  fileInfos?: Observable<any>;
+  fileInfos: any[] = [];
 
   constructor(private projetService: ProjetService, private activatedroute : ActivatedRoute, private router: Router) { }
 
@@ -22,8 +22,9 @@ export class ImageUploadComponent implements OnInit {
     this.activatedroute.paramMap.subscribe(params => {
       this.id = params.get('id');
       console.log(this.id);
-      this.fileInfos = this.projetService.getProjetImages(this.id);
-      console.log(this.fileInfos);
+      this.projetService.getProjetImages(this.id).subscribe(fileInfos => {
+        this.fileInfos = fileInfos;
+      });
     });
   }
 

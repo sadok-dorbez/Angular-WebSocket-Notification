@@ -9,7 +9,7 @@
                     <h2 class="title">Detail du Projet</h2>
                     <div class="page-links">
                         <ul>
-                            <li>    
+                            <li>
                                 <a href='index.html'>Home</a>
                             </li>
                             <li>
@@ -38,18 +38,21 @@
                         <p>Date Debut: {{ project.dateDebut | date:'yyyy-MM-dd' }}</p>
                         <p>Date Fin: {{ project.dateFin | date:'yyyy-MM-dd' }}</p>
                     </div>
-                    
-                    <div class="part-img">
-                        <img src="../../assets/img/logo_trial.png" alt="Project Image" class="part-img">
+
+                  <div class="part-img" *ngIf="imageSources | async as imageSourcesArray">
+                    <div *ngFor="let imageSrc of imageSourcesArray">
+                      <img *ngIf="imageSrc" style="width: 200px; height: 200px;" [src]="imageSrc" alt="Img">
                     </div>
+                  </div>
+
                 </div>
             </div>
             <div class="col-xl-4 col-lg-4 col-md-9 col-sm-9 d-xl-flex d-lg-flex d-block align-items-end">
-                
+
             </div>
         </div>
     </div>
-    
+
     <div class="part-address">
         <div class="container">
             <div class="address-elements">

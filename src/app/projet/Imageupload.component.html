@@ -75,9 +75,8 @@
             <div class="card mt-3">
               <div class="card-header">List of Images</div>
               <ul class="list-group list-group-flush">
-                <li *ngFor="let file of fileInfos | async" class="list-group-item">
+                <li *ngFor="let file of fileInfos" class="list-group-item">
                   <a href="{{ file.url }}">{{ file.name }}</a>
-                  <img style="width: 200px; height: 200px;" src="data:{{ file.type }};base64,{{ file.data }}" alt="Img">
                 </li>
               </ul>
             </div>
