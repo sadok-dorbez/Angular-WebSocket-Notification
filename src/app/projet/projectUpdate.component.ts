@@ -21,11 +21,20 @@ export class ProjectUpdateComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedroute.paramMap.subscribe(params => {
-      this.id = params.get('id');
-      console.log(this.id);
+       this.id = params.get('id');
+       console.log(this.id);
+       this.projetService.getProjetById(this.id).subscribe(
+         data => {
+           this.projet = data;
+           this.formatDates(this.projet);   
+         },
+         error => {
+           console.error('Error fetching project data:', error);
+         }
+       );
     });
-  }
-  
+   }
+   
 
   updateProjet(id: any , projet: any): void {
     this.projetService.updateProjet(id , projet).subscribe(
@@ -49,5 +58,17 @@ export class ProjectUpdateComponent implements OnInit {
     } else {
       form.controls['dateFin'].setErrors(null);
     }
+ }
+
+ formatDates(projet: any): void {
+  
+  if (projet.dateDebut) {
+     const dateDebut = new Date(projet.dateDebut);
+     projet.dateDebut = dateDebut.toISOString().split('T')[0]; 
+  }
+  if (projet.dateFin) {
+     const dateFin = new Date(projet.dateFin);
+     projet.dateFin = dateFin.toISOString().split('T')[0]; 
+  }
  }
 }
